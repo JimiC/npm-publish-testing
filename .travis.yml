@@ -1,0 +1,10 @@
+git:
+   depth: 5
+jobs:
+  include:    
+    - stage: release
+      if: tag IS present AND type = push      
+      script:
+        - npm version $TRAVIS_TAG
+        - npm publish
+        - git push --follow-tags
