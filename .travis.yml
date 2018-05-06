@@ -15,3 +15,5 @@ jobs:
         provider: npm
         email: jimikar@gmail.com
         api_key: $NPM_TOKEN
+        on:
+          tags: true
