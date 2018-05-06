@@ -9,7 +9,7 @@ jobs:
       if: NOT tag IS present
       script: echo "Running test against $(node -v) ..."  
     - stage: publish
-      if: tag IS present AND repo =~ ^JimiC/npm-publish-test
+      if: tag IS present AND repo =~ ^JimiC/npm-publish-testing
       node_js: node      
       deploy:
         provider: npm
