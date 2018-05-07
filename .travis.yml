@@ -17,18 +17,15 @@ before_install:
   - export PATH=$HOME/.yarn/bin:$PATH
 if: NOT tag IS present
 
-# jobs:
-#   include:
-#     - stage: test
-#       after_success:
-
-#     - stage: publish
-#       if: tag IS present AND repo =~ ^JimiC
-#       os: linux
-#       node_js: 6.14      
-#       deploy:
-#         provider: npm
-#         email: jimikar@gmail.com
-#         api_key: $NPM_TOKEN
-#         on:
-#           tags: true
+jobs:
+  include:
+    - stage: publish
+      if: tag IS present AND repo =~ ^JimiC
+      os: linux
+      node_js: 6.14      
+      deploy:
+        provider: npm
+        email: jimikar@gmail.com
+        api_key: $NPM_TOKEN
+        on:
+          tags: true
