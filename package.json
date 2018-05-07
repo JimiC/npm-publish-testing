@@ -11,5 +11,8 @@
     "test": "echo \"Running test against $(node -v) ...\""
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chalk": "^2.4.1"
+  }
 }
