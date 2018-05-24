@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "prepublishOnly": "echo \"Executing prepublish script\"",
-    "test": "echo \"Running test against $(node -v) ...\""
+    "test": "echo \"Running test against $(node -v)\""
   },
   "author": "",
   "license": "ISC",
