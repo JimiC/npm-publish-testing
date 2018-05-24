@@ -1,6 +1,6 @@
 {
   "name": "npm-publish-testing",
-  "version": "1.0.14",
+  "version": "1.0.18",
   "description": "A test repo to publish to npm registry",
   "main": "",
   "files": [
@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "prepublishOnly": "echo \"Executing prepublish script\"",
-    "test": "echo \"Running test against $(node -v)\""
+    "test": "echo \"Running test against $(node -v) ...\""
   },
   "author": "",
   "license": "ISC",
