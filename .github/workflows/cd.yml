@@ -40,7 +40,7 @@ jobs:
         run: npm run prepublishOnly
 
       - name: Publishing to NPM
-        uses: actions/npm@v1.0.0
+        uses: actions/npm@1.0.0
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         with:
