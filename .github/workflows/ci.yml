@@ -1,0 +1,38 @@
+name: Node CI
+
+on: push
+
+jobs:
+  test:
+    name: Test
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        node_js:
+          - 8
+
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 5
+
+      - name: "Setting up Node.js: ${{ matrix.node_js }}"
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_js }}
+
+      - name: Build info
+        run: |
+          node --version
+          npm --version
+
+      - name: Installing dependencies
+        run: npm ci
+
+      - name: Running tests
+        run: npm test
