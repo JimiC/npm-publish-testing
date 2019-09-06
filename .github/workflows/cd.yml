@@ -39,7 +39,11 @@ jobs:
       - name: Publishing to NPM
         uses: actions/npm@v2.0.0
         env:
-          NPM_REGISTRY_URL: https://registry.npmjs.org
+          # NPM_REGISTRY_URL: https://registry.npmjs.org
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         with:
           args: publish
+
+      - name: Print NPM Registry
+        run: | 
+            echo ${NPM_REGISTRY_URL}
