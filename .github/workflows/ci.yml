@@ -16,26 +16,7 @@ jobs:
           - 8
 
     steps:
-      - name: Cloning repository
-        uses: actions/checkout@v1
-        with:
-          fetch-depth: 5
-
-      - name: "Setting up Node.js: ${{ matrix.node_js }}"
-        uses: actions/setup-node@v1.1.2
-        with:
-          node-version: ${{ matrix.node_js }}
-
-      - name: Build info
-        run: |
-          node --version
-          npm --version
-
-      - name: Installing dependencies
-        run: npm ci
-
-      - name: Running tests
-        run: npm test
-
       - name: NPM registry
-        run: echo $NPM_REGISTRY_URL
+        uses: actions/npm@v2.0.0        
+        with:
+          args: config list
