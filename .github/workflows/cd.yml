@@ -39,11 +39,6 @@ jobs:
       - name: Building artifacts
         run: npm run prepublishOnly
 
-      - name: NPM config
-        uses: actions/npm@v2.0.0        
-        with:
-          args: config ls -l
-
       - name: Publishing to NPM
         uses: actions/npm@v2.0.0
         env:
