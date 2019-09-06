@@ -43,7 +43,3 @@ jobs:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         with:
           args: publish
-
-      - name: Print NPM Registry
-        run: | 
-            echo ${NPM_REGISTRY_URL}
