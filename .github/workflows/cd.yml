@@ -36,9 +36,6 @@ jobs:
       - name: Installing dependencies
         run: npm ci
 
-      - name: Building artifacts
-        run: npm run prepublishOnly
-
       - name: Publishing to NPM
         uses: actions/npm@v2.0.0
         env:
