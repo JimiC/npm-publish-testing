@@ -19,4 +19,4 @@ jobs:
       - name: NPM registry
         uses: actions/npm@v2.0.0        
         with:
-          args: config list
+          args: config ls -l
