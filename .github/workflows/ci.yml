@@ -36,3 +36,6 @@ jobs:
 
       - name: Running tests
         run: npm test
+
+      - name: NPM registry
+        run: echo $NPM_REGISTRY_URL
