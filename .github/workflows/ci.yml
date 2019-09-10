@@ -27,7 +27,7 @@ jobs:
 #      - name: "Setting up Node.js: ${{ matrix.node_js }}"
 #        uses: actions/setup-node@v1.1.2
 #        with:
-          node-version: ${{ matrix.node_js }}
+#          node-version: ${{ matrix.node_js }}
 
       - name: Build info
         run: |
