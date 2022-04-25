@@ -8,6 +8,8 @@ on:
 jobs:
   test:
     name: 'Node.js: ${{ matrix.node-version }} | ${{ matrix.os }} | ${{ matrix.arch }}'
+    
+    timeout-minutes: 5
 
     runs-on: ubuntu-latest
 
@@ -23,17 +25,18 @@ jobs:
           - 18
           - 16
           - 14
-
-    concurrency: 
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
-      cancel-in-queue: false
-
+    
     steps:
       - name: Cloning repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 5
+        
+      - name: Check concurrency 
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          all_but_latest: true
+          access_token: ${{ github.token }}
 
       - name: "Setting up Node.js: ${{ matrix.node-version }}"
         uses: actions/setup-node@v3
