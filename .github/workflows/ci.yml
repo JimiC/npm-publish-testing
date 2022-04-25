@@ -12,18 +12,22 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      max-parallel: 3      
+      # max-parallel: 2      
       matrix:
         os:
           - ubuntu-latest
+          - macOS-latest
         arch:
           - x64
         node-version:
+          - 18
+          - 16
           - 14
 
     concurrency: 
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
+      cancel-in-queue: false
 
     steps:
       - name: Cloning repository
